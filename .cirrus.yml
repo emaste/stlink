@@ -1,0 +1,26 @@
+freebsd_instance:
+  # image: freebsd-12-1-stable-amd64
+  # We need a newer image to install llvm11
+  image_family: freebsd-12-1-snap
+  #cpu: 8
+  #memory: 24G
+
+env:
+  CIRRUS_CLONE_DEPTH: 1
+
+task:
+  #only_if: $CIRRUS_BRANCH != 'svn_head'
+  #timeout_in: 120m
+  install_script:
+  - pkg install -y cmake ninja
+  #qemu42 uefi-edk2-qemu-x86_64 llvm11
+  #setup_user_script:
+  #- pw useradd user
+  #- mkdir -p /usr/obj/$(pwd -P)
+  #- chown user:user /usr/obj/$(pwd -P)
+  script:
+  - mkdir -p build/Debug
+  - cd build/Debug
+  - cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=$PWD/install -GNinja ../..
+  - ninja
+  - cd -
