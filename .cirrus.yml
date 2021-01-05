@@ -12,7 +12,7 @@ task:
   #only_if: $CIRRUS_BRANCH != 'svn_head'
   #timeout_in: 120m
   install_script:
-  - pkg install -y cmake ninja
+  - pkg install -y cmake gtk3 ninja pkgconf
   #qemu42 uefi-edk2-qemu-x86_64 llvm11
   #setup_user_script:
   #- pw useradd user
