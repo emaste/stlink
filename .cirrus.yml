@@ -24,3 +24,5 @@ task:
   - cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=$PWD/install -GNinja ../..
   - ninja
   - cd -
+  script_script:
+  sh ./travis.sh
