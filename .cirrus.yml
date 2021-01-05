@@ -25,4 +25,4 @@ task:
   - ninja
   - cd -
   script_script:
-  sh ./travis.sh
+  sh ./.travis.sh
