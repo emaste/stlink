@@ -8,6 +8,7 @@ echo "----"
 echo "WORK DIR:$DIR"
 DIR=$PWD
 
+env
 if [ "$TRAVIS_JOB_NAME" == "linux-mingw" ]; then
     echo "--> Building Release for Windows (x86-64) ..."
     mkdir -p build-mingw && cd build-mingw
