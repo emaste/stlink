@@ -62,6 +62,8 @@ else # local test-build
     mkdir -p build/Debug && cd build/Debug
     echo "-DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=$PWD/install"
     cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=$PWD/install ../../
+    pwd
+    ls -la
     make && cd -
 
     echo "--> Building Release with package..."
