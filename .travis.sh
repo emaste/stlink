@@ -64,7 +64,8 @@ else # local test-build
     cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=$PWD/install ../../
     pwd
     ls -la
-    make && cd -
+    #make && cd -
+    ninja && cd -
 
     echo "--> Building Release with package..."
     mkdir -p build/Release && cd build/Release
